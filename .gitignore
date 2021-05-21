@@ -1,3 +1,5 @@
+.idea/
+_strings/
 target/
 pom.xml.tag
 pom.xml.releaseBackup
