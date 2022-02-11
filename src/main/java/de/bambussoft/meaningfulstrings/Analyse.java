@@ -8,6 +8,8 @@ import java.util.stream.Stream;
 public class Analyse {
 
     public static void main(String[] args) throws IOException {
+        AnalyserBuilder analyserBuilder = new AnalyserBuilder();
+        StringAnalyser build = analyserBuilder.build();
         Path stringsPath = Path.of(args[0]);
         Stream<String> lines = Files.lines(stringsPath);
 

@@ -10,7 +10,7 @@ public class StringProbability extends DoubleKeyMap<Character, Character, Double
         super();
     }
 
-    public static StringProbability of(StringAnalysis stringAnalysis) {
+    static StringProbability of(StringAnalysis stringAnalysis) {
         StringProbability stringProbability = new StringProbability();
 
         for(Map.Entry<Character, Long> e : stringAnalysis.charOccurrences.entrySet()) {
@@ -29,7 +29,7 @@ public class StringProbability extends DoubleKeyMap<Character, Character, Double
         return stringProbability;
     }
 
-    public double evaluate(String test) {
+    double evaluate(String test) {
         List<CharFollower> charFollowers = StringAnalysis.toCharTuple(test);
         double probabilitySum = charFollowers.stream().mapToDouble(c -> computeIfAbsent(c.getBase(), c.getFollowing(), (k1, k2) -> 0d)).sum();
         return probabilitySum / (test.length() - 1);

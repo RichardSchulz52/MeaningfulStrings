@@ -6,9 +6,9 @@ import java.util.stream.Stream;
 
 public class StringAnalysis {
 
-    public final CountMap<Integer> wordLength;
-    public final CountMap<Character> charOccurrences;
-    public final CharFollowData charFollowData;
+    final CountMap<Integer> wordLength;
+    final CountMap<Character> charOccurrences;
+    final CharFollowData charFollowData;
 
     private StringAnalysis(CountMap<Integer> wordLength, CountMap<Character> charOccurrences, CharFollowData charFollowData) {
         this.wordLength = wordLength;
@@ -16,7 +16,7 @@ public class StringAnalysis {
         this.charFollowData = charFollowData;
     }
 
-    public static StringAnalysis of(Stream<String> lines) {
+    static StringAnalysis of(Stream<String> lines) {
         CountMap<Integer> wordLength = new CountMap<>();
         CountMap<Character> charOccurrences = new CountMap<>();
         CharFollowData charFollowData = new CharFollowData();

@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class WordProbability {
+public class WordProbability implements StringAnalyser {
 
     private final StringProbability stringProbability;
     private final double threshold;

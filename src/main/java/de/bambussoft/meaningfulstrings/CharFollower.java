@@ -5,7 +5,7 @@ public class CharFollower {
     private final char base;
     private final char following;
 
-    public CharFollower(char base, char following) {
+    CharFollower(char base, char following) {
         this.base = base;
         this.following = following;
     }
